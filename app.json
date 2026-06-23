@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "trove_tpka",
+    "name": "Trove TPKA",
     "slug": "trove_tpka",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -33,10 +33,17 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "@maplibre/maplibre-react-native/app.plugin.js"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "01b6f74f-747f-43fe-80fa-be9a42381ce1"
+      }
     }
   }
 }
