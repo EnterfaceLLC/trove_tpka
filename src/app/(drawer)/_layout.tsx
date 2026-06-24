@@ -1,14 +1,29 @@
-import { Link } from "expo-router";
+import { Link, Redirect } from "expo-router";
 import { Drawer } from "expo-router/drawer";
 import { SymbolView } from "expo-symbols";
-import { Pressable } from "react-native";
+import { ActivityIndicator, Pressable } from "react-native";
 
 import { useClientOnlyValue } from "@/src/components/useClientOnlyValue";
 import { useColorScheme } from "@/src/components/useColorScheme";
 import Colors from "@/src/constants/Colors";
+import { useAuth } from "@/src/context/useAuth";
 
-export default function TabLayout() {
+export default function DrawerLayout() {
   const colorScheme = useColorScheme();
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <ActivityIndicator
+        size="large"
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      />
+    );
+  }
+
+  if (!user) {
+    return <Redirect href="/(auth)" />;
+  }
 
   return (
     <Drawer
