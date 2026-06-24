@@ -15,7 +15,10 @@ export default function TabLayout() {
       screenOptions={{
         drawerActiveTintColor: Colors[colorScheme].tint,
         headerShown: useClientOnlyValue(false, true),
-        drawerStyle: { width: "60%" },
+        drawerStyle: {
+          width: "60%",
+          backgroundColor: Colors[colorScheme].background,
+        },
       }}
     >
       <Drawer.Screen
@@ -34,7 +37,7 @@ export default function TabLayout() {
             />
           ),
           headerRight: () => (
-            <Link href="../" asChild>
+            <Link href="/(modals)/infoModal" asChild>
               <Pressable style={{ marginRight: 15 }}>
                 {({ pressed }) => (
                   <SymbolView

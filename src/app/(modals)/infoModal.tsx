@@ -1,3 +1,4 @@
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet } from "react-native";
 
@@ -17,6 +18,15 @@ export default function ModalScreen() {
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          title: "Info Modal",
+          presentation: "modal",
+          animation: "slide_from_bottom",
+        }}
+      />
     </View>
   );
 }
