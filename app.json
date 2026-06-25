@@ -16,7 +16,19 @@
         "foregroundImage": "./src/assets/images/icons/adaptive-icon.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.dotenterface.trove_tpka"
+      "package": "com.dotenterface.trove_tpka",
+      "permissions": [
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.WRITE_STEPS",
+        "android.permission.health.READ_ACTIVE_CALORIES_BURNED",
+        "android.permission.health.WRITE_ACTIVE_CALORIES_BURNED",
+        "android.permission.health.READ_DISTANCE",
+        "android.permission.health.WRITE_DISTANCE",
+        "android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND",
+        "android.permission.health.WRITE_HEALTH_DATA_IN_BACKGROUND",
+        "android.permission.health.READ_HEALTH_DATA_HISTORY",
+        "android.permission.health.WRITE_HEALTH_DATA_HISTORY"
+      ]
     },
     "web": {
       "bundler": "metro",
