@@ -5,7 +5,6 @@ import { ActivityIndicator, Pressable } from "react-native";
 
 import { useClientOnlyValue } from "@/src/components/useClientOnlyValue";
 import { useColorScheme } from "@/src/components/useColorScheme";
-import Colors from "@/src/constants/Colors";
 import { useAuth } from "@/src/context/useAuth";
 
 export default function DrawerLayout() {
@@ -28,12 +27,17 @@ export default function DrawerLayout() {
   return (
     <Drawer
       screenOptions={{
-        drawerActiveTintColor: Colors[colorScheme].tint,
-        headerShown: useClientOnlyValue(false, true),
+        drawerActiveTintColor: "#2f95dc",
+        drawerInactiveTintColor: "#B59B85",
         drawerStyle: {
           width: "60%",
-          backgroundColor: Colors[colorScheme].background,
+          backgroundColor: "#1A1B26",
         },
+        headerShown: useClientOnlyValue(false, true),
+        headerStyle: {
+          backgroundColor: "#1A1B26",
+        },
+        headerTintColor: "#B59B85",
       }}
     >
       <Drawer.Screen
@@ -58,7 +62,7 @@ export default function DrawerLayout() {
                   <SymbolView
                     name={{ ios: "info.circle", android: "info", web: "info" }}
                     size={25}
-                    tintColor={Colors[colorScheme].text}
+                    tintColor="#FFF"
                     style={{ opacity: pressed ? 0.5 : 1 }}
                   />
                 )}
@@ -81,6 +85,20 @@ export default function DrawerLayout() {
               tintColor={color}
               size={28}
             />
+          ),
+          headerRight: () => (
+            <Link href="/(modals)/infoModal" asChild>
+              <Pressable style={{ marginRight: 15 }}>
+                {({ pressed }) => (
+                  <SymbolView
+                    name={{ ios: "info.circle", android: "info", web: "info" }}
+                    size={25}
+                    tintColor="#FFF"
+                    style={{ opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+            </Link>
           ),
         }}
       />
