@@ -33,7 +33,18 @@
           "backgroundColor": "#1A1B26"
         }
       ],
-      "@maplibre/maplibre-react-native/app.plugin.js"
+      "@maplibre/maplibre-react-native/app.plugin.js",
+      "expo-health-connect",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "minSdkVersion": 26
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
