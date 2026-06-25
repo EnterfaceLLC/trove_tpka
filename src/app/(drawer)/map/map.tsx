@@ -23,7 +23,7 @@ const locations = [
   },
 ];
 
-export default function App() {
+export default function MapScreen() {
   const handleMarkerPress = (event: { nativeEvent: { id: string } }) => {
     console.log(`Marker ${event.nativeEvent.id} pressed`);
   };

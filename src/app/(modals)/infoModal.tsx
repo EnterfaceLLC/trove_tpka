@@ -1,32 +1,21 @@
-import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { Platform, StyleSheet } from "react-native";
+import { router } from "expo-router";
+import { Pressable, StyleSheet } from "react-native";
 
-import EditScreenInfo from "@/src/components/EditScreenInfo";
 import { Text, View } from "@/src/components/Themed";
 
 export default function ModalScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-      <EditScreenInfo path="app/modal.tsx" />
+      <View style={styles.grabber} />
+      <Text style={styles.title}>About Trove TPKA</Text>
+      <Text style={styles.body}>
+        This is your info modal. On Android, it opens with a slide-up transition
+        and can be dismissed by tapping outside or using the back button.
+      </Text>
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
-
-      <Stack.Screen
-        options={{
-          headerShown: true,
-          title: "Info Modal",
-          presentation: "modal",
-          animation: "slide_from_bottom",
-        }}
-      />
+      <Pressable style={styles.closeButton} onPress={() => router.back()}>
+        <Text style={styles.closeButtonText}>Close</Text>
+      </Pressable>
     </View>
   );
 }
@@ -34,16 +23,39 @@ export default function ModalScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#1A1B26",
+    padding: 16,
+  },
+  grabber: {
+    alignSelf: "center",
+    width: 44,
+    height: 5,
+    borderRadius: 2,
+    backgroundColor: "#73685C",
+    marginBottom: 16,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: "bold",
+    color: "#f4f4f5",
+    marginBottom: 8,
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
+  body: {
+    fontSize: 15,
+    lineHeight: 22,
+    color: "#d4d4d8",
+    marginBottom: 20,
+  },
+  closeButton: {
+    alignSelf: "flex-start",
+    backgroundColor: "#60524B",
+    borderRadius: 999,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+  },
+  closeButtonText: {
+    color: "#f4f4f5",
+    fontSize: 14,
+    fontWeight: "600",
   },
 });

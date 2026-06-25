@@ -1,10 +1,5 @@
 import { useFonts } from "expo-font";
-import {
-  DarkTheme,
-  DefaultTheme,
-  Slot,
-  ThemeProvider
-} from "expo-router";
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
@@ -54,7 +49,23 @@ function RootLayoutNav() {
   return (
     <AuthProvider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Slot />
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen
+            name="(modals)/infoModal"
+            options={{
+              headerShown: false,
+              presentation: "formSheet",
+              animation: "slide_from_bottom",
+              gestureDirection: "vertical",
+              sheetInitialDetentIndex: 0,
+              sheetAllowedDetents: [0.5, 0.75, 1],
+              sheetCornerRadius: 20,
+              sheetExpandsWhenScrolledToEdge: true,
+              sheetElevation: 10,
+              sheetGrabberVisible: true,
+            }}
+          />
+        </Stack>
       </ThemeProvider>
     </AuthProvider>
   );

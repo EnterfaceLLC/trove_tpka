@@ -68,7 +68,7 @@ export default function DrawerLayout() {
         }}
       />
       <Drawer.Screen
-        name="two"
+        name="map/map"
         options={{
           title: "City Map",
           drawerIcon: ({ color }) => (
@@ -93,6 +93,78 @@ export default function DrawerLayout() {
               name={{
                 ios: "chevron.left.forwardslash.chevron.right",
                 android: "history_edu",
+                web: "code",
+              }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="vault"
+        options={{
+          title: "Vault",
+          drawerIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "box",
+                web: "code",
+              }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+
+      <Drawer.Screen
+        name="rewards"
+        options={{
+          title: "Rewards",
+          drawerIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "trophy",
+                web: "code",
+              }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+
+      <Drawer.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          drawerIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "person",
+
+                web: "code",
+              }}
+              tintColor={color}
+              size={28}
+            />
+          ),
+        }}
+      />
+
+      <Drawer.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          drawerIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: "chevron.left.forwardslash.chevron.right",
+                android: "settings",
                 web: "code",
               }}
               tintColor={color}
